@@ -1,0 +1,140 @@
+
+    <%-include('./partials/header')%>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">ZapCart</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Deals</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+            <div class="search-cart">
+                <input type="text" placeholder="Search...">
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="nav-links">
+                <a href="/cart">cart</a>
+                <a href="" id="loginnavbtn" >Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <% if(success.length>0){ %>
+        <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-blue-500">
+            <span class="inline-block mt-1 mb-1 text-white">
+                <%= success %>
+            </span>
+        </div>
+        <% } %>
+
+    <div class="main-content">
+            <div class="w-full h-screen flex items-start px-20 py-20">
+                <div class="w-[25%] flex h-screen flex-col items-start">
+                    <div class="flex items-center gap-2">
+                        <h3>sort by</h3>
+                        <form action="/shop">
+                            <select class="border-[1px] px-2 py-1" name="sortby" id="">
+                                <option value="popular">Popular</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="flex flex-col mt-20">
+                        <a class="block w-fit mb-2" href="">New Collection</a>
+                        <a class="block w-fit mb-2" href="">All Products</a>
+                        <a class="block w-fit mb-2" href="">Discounted Products</a>
+                    </div>
+                    <div class="mt-32">
+                        <a class="block w-fit mb-2" href="">Filter by :</a>
+                        <a class="block w-fit mb-2" href="">Availability</a>
+                        <a class="block w-fit mb-2" href="">Discount</a>
+                    </div>
+                </div>
+
+                <div class="w-[75%] flex flex-col gap-5 h-screen">
+                    <div class="flex items-start gap-5 flex-wrap justify-around">
+                        <% products.forEach(function(product) { %>
+                            <div class="w-60 mb-5"> <!-- Add margin-bottom for spacing between rows -->
+                                <div class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>]">
+                                    <img class="h-[12rem]" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                                </div>
+                                <div class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]">
+                                    <div>
+                                           
+                                        <h3><%= product.name %></h3>
+                                        <h4>₹ <%= product.price %></h4>
+                                    </div>
+                                        
+                                    <form action="/users/cart" method="POST">
+                                        <input type="text" value="<%=product._id%>" name="pid" style="display: none;">
+                                        <input type="text" value="<%=users.email%>" name="email" style="display: none;">
+                                        <input type="submit" class="w-28 h-7 flex items-center justify-center rounded-full bg-white" value="Add to cart">
+                                    </form>
+                                    
+
+                                    <!-- <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="/products/addtocart">
+                                        <i class="ri-add-line"></i> -->
+
+                                    </a>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+                
+
+
+
+            </div>
+        
+        <div class="container1" id="container1" style="display: none;">
+            <div class="buttons">
+                <button id="signUpBtn">Profile</button>
+            </div>
+            <div class="formContainer" id="form">
+                <div class="form">
+                   <div class="pic">
+                </div>
+                <p><b>User:</b><%=users.fullname%></p>
+                <p><b>Email:</b><%=users.email%></p>
+                </div>          
+            </div>
+        </div>
+    </div>
+
+    <script >
+    document.addEventListener("DOMContentLoaded", () => {
+        const signUpBtn = document.getElementById("signUpBtn");
+        // const logInBtn = document.getElementById("logInBtn");
+        const form = document.getElementById("form");
+    
+        // Slide animation for forms
+        signUpBtn.addEventListener("click", () => {
+            form.style.transform = "translateX(0px)";
+        });
+    
+        // logInBtn.addEventListener("click", () => {
+        //     form.style.transform = "translateX(-400px)";
+        // });
+        
+        
+        // Toggle visibility for container
+        let login = document.getElementById("loginnavbtn");
+        let container = document.querySelector(".container1");    
+        login.addEventListener("click", function(event) {
+            event.preventDefault();  // Prevents default anchor behavior
+            // Toggle visibility of the container
+            if (container.style.display === "none" || container.style.display === "") {
+                container.style.display = "block"; // Show container
+            } else {
+                container.style.display = "none";  // Hide container
+            }
+        });
+    });</script>
+</body>
+</html>
+
+
+
