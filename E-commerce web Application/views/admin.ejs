@@ -1,61 +1,66 @@
 <%-include('./partials/header')%>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="logo">ZapCart</a>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Shop</a>
-                <a href="#">Deals</a>
-                <a href="#">Contact</a>
-                <a href="#">About</a>
-            </div>
-            <div class="search-cart">
-                <input type="text" placeholder="Search...">
-                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-            <div class="nav-links">
-                <a href="/cart">cart</a>
 
-                <a href="" id="loginnavbtn" >Login</a>
+  
+
+<div class="main-content">
+    <section class="imgcontainer" id="home">
+        <div class="sliderwrapper shadow-2xl">
+            <div class="slide">
+                <img id="slide1" class="w-full h-full object-cover" src="/images/colorful-kitted-bags-by-window.jpg" alt="bag 1">
+                <img id="slide2" src="/images/deal3.png" alt="bag 2">
+                <img id="slide3" src="/images/image 80.png" alt="">
+                <img id="slide4" src="/images/office.jpeg" alt="bag 3">
+                <img id="slide6" src="/images/office2.jpeg" alt="bag 5">
+                <img id="slide5" src="/images/school1.png" alt="bag 4">
+            </div>
+            <div class="slidenav">
+                <a href="#slide1"></a>
+                <a href="#slide2"></a>
+                <a href="#slide3"></a>
+                <a href="#slide4"></a>
+                <a href="#slide5"></a>
+                <a href="#slide6"></a>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <div class="main-content">
-        <div class="content">
-            <img src="https://example.com/eco-friendly-products.jpg" alt="Eco-Friendly Products" class="hero-image" />
-            <h2>Welcome to ZapCart – Shop Green, Live Clean!</h2>
-            <h3>Eco-Friendly Choices</h3>
-            <p>ZapCart brings you a curated selection of sustainable products that help you live a cleaner, greener life.</p>
-            <h3>Why ZapCart?</h3>
-            <ul>
-                <li><strong>Sustainable Products:</strong> Biodegradable, recyclable, and zero-waste options for every need.</li>
-                <li><strong>Support Local:</strong> Shop from eco-conscious small businesses and artisans.</li>
-                <li><strong>Natural Quality:</strong> Products made from pure, natural ingredients with minimal impact on the planet.</li>
-            </ul>
-            <p><strong>Start Shopping, Start Changing!</strong> Browse our eco-friendly catalog today and make every purchase count for a better world.</p>
+    <div class="container1 flex flex-col items-center justify-center mt-4 " id="container1">
+        <div class="buttons mb-4">
+            <button id="logInBtn" class="bg-gray-500 text-white px-4 py-2 rounded-lg focus:outline-none hover:bg-gray-600 transition">Log In</button>
         </div>
-        
-        <div class="container1" id="container1">
-            <div class="buttons">
-                <button id="logInBtn">Log In</button>
-            </div>
-            <div class="formContainer" id="form">
-                <div class="form">
-                    <form action="/owners/login" method="post">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email"/>
-                        <label for="password">Password</label>
-                        <input type="password" id="password"  name="password"/>
-                        <input type="submit" value="Login">
-                    </form>
-                </div>
+        <div class="form-container w-full max-w-md mx-auto transition-transform duration-300 ease-in-out" id="form">
+           
+            <div class="form login-form">
+                <form action="/owners/login" method="post">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="loginEmail" name="email" class="block w-full p-2 border border-gray-300 rounded-lg mb-4"/>
+                    <label for="password" class="block text-gray-700">Password</label>
+                    <input type="password" id="loginPassword" name="password" class="block w-full p-2 border border-gray-300 rounded-lg mb-4"/>
+                    <input class="submit1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition" type="submit" value="Login">
+                </form>
             </div>
         </div>
     </div>
+    
+    </div>
+<script>
 
-
-    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const signUpBtn = document.getElementById("signUpBtn");
+    const logInBtn = document.getElementById("logInBtn");
+    const signUpForm = document.querySelector(".sign-up-form");
+    const loginForm = document.querySelector(".login-form");
+    
+    signUpBtn.addEventListener("click", function() {
+        signUpForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+    });
+    
+    logInBtn.addEventListener("click", function() {
+        loginForm.classList.remove("hidden");
+        signUpForm.classList.add("hidden");
+    });
+});
 
 
     // Toggle visibility for container
@@ -70,7 +75,8 @@
         } else {
             container.style.display = "none";  // Hide container
         }
-    });
+
+});
     </script>
 
 <%-include('./partials/footer')%>

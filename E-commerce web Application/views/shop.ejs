@@ -1,25 +1,6 @@
 
     <%-include('./partials/header')%>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="logo">ZapCart</a>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Shop</a>
-                <a href="#">Deals</a>
-                <a href="#">Contact</a>
-                <a href="#">About</a>
-            </div>
-            <div class="search-cart">
-                <input type="text" placeholder="Search...">
-                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-            <div class="nav-links">
-                <a href="/cart">cart</a>
-                <a href="" id="loginnavbtn" >Login</a>
-            </div>
-        </div>
-    </nav>
+
 
     <% if(success.length>0){ %>
         <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-blue-500">
@@ -29,7 +10,9 @@
         </div>
         <% } %>
 
+
     <div class="main-content">
+
             <div class="w-full h-screen flex items-start px-20 py-20">
                 <div class="w-[25%] flex h-screen flex-col items-start">
                     <div class="flex items-center gap-2">
@@ -70,7 +53,7 @@
                                     <form action="/users/cart" method="POST">
                                         <input type="text" value="<%=product._id%>" name="pid" style="display: none;">
                                         <input type="text" value="<%=users.email%>" name="email" style="display: none;">
-                                        <input type="submit" class="w-28 h-7 flex items-center justify-center rounded-full bg-white" value="Add to cart">
+                                        <input type="submit" style="width: 100px;" class="h-7 flex items-center justify-center rounded-full bg-white text-black " value="Add to cart">
                                     </form>
                                     
 
@@ -83,14 +66,10 @@
                         <% }) %>
                     </div>
                 </div>
-                
-
-
-
             </div>
         
-        <div class="container1" id="container1" style="display: none;">
-            <div class="buttons">
+            <div class="container1 flex flex-col items-center justify-center mt-4 z-10 hidden" id="container1">
+                <div class="buttons">
                 <button id="signUpBtn">Profile</button>
             </div>
             <div class="formContainer" id="form">
@@ -103,6 +82,9 @@
             </div>
         </div>
     </div>
+
+
+
 
     <script >
     document.addEventListener("DOMContentLoaded", () => {
