@@ -21,7 +21,18 @@ This is a sample project using the MERN (MongoDB, Express.js, React.js, Node.js)
 
 
 # BACKEND
-
+`Install dependencies that requires`
 1. npm i express mongoose dotenv jsonwebtoken bcryptjs cookie-parser cloudinary socket.io
 
-2. go to mongobd.com create password and string for db creation
+2. sudo sysytemctl start mongod `to start mongoos, its like permission`
+
+3. go to mongobd.com create password and string for db creation
+
+
+# flow
+1. signup
+2. login
+3. logout
+4. update profile i.e (image)
+    here using cloudinary i.e cloud name (api key)
+
