@@ -1,0 +1,422 @@
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+\geometry{left=2cm,right=10cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage{emoji}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage{xcolor}
+\ifxetexorluatex
+  \setmainfont{Carlito}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+  \usepackage{emoji}
+  
+\fi
+\definecolor{VividPurple}{HTML}{000000}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{2E2E2E}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{RAMU CHILUVERU}
+\tagline{Rajiv Gandhi University Of Knowledge Technologies,Basar.}
+\smallskip
+\smallskip
+%\tagline{Jaypee University of Engineering and Technology}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%\photo{3.3cm}{profile.jpg}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  Contact: +91 9666213966
+  \hspace{1cm}
+  \email{\href{mailto:ramuchiluveru64@gmail.com}{ramuchiluveru64@gmail.com}}
+%  \email{jd7june1999@gmail.com}
+%   \phone{000-00-0000}
+%  \mailaddress{Address, Street, 00000 County}
+  \location{Nalgonda, Telangana - India}
+%  \homepage{marissamayr.tumblr.com/}
+%  \twitter{@marissamayer}
+  \linkedin{\href{https://www.linkedin.com/in/ramu-chiluveru/}{LinkedIn}}
+  \github{\href{https://github.com/Ramu-chiluveru}{Github}}
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{Experience}
+
+\cvevent{Campus Ambassador Intern}{\href{https://www.geeksforgeeks.org/user/ramuchiluveru64/}{GeeksforGeeks}}{July 2024 -- Present}{Remote}
+\begin{itemize}
+    \item Actively promote GeeksforGeeks' events and resources within the campus community.
+    % \item Organize and manage workshops, webinars, and coding events to enhance engagement and learning.
+\end{itemize}
+
+\smallskip
+
+
+
+\cvevent{GSSoC '24 Contributor}{\href{https://github.com/Ramu-chiluveru/ExamTime.git}{GirlScript Summer of Code}}{May 2024 -- Aug 2024}{Remote}
+\begin{itemize}
+\item Contributed to open-source projects.
+\item Tech Stack: MERN (MongoDB, Express.js, React.js, Node.js)
+\end{itemize}
+
+\smallskip
+
+\cvevent{Full Stack Development Intern Trainee}{\href{https://github.com/Ramu-chiluveru/CodSoft.git}{Codsoft}}{Aug 2023 -- Sep 2023}{Remote}
+\begin{itemize}
+\item Worked on the Design and Development part of a fully.  \textbf{Responsive Webpage} for the websites.
+
+\item Tech Stack : \textbf{HTML | CSS | JavaScript}
+\end{itemize}
+
+\cvsection{Achievements}
+\begin{itemize}
+\item Codeclub contest Winner (07/2023 - 07/2023)
+Hosted by Team codeclub at our campus , consecutively 2 Times.
+\item Achieved a competitive programming rating of 1457 on \href{https://leetcode.com/u/Ramu_chiluveru/}{LeetCode} and 1625 on \href{https://www.geeksforgeeks.org/user/ramuchiluveru64/}{GeeksforGeeks}.
+% \item \href{https://www.hackerrank.com/certificates/9cbc1dd52213}{Problem Solving} certificate from Hackerrank.
+\item \href{https://badgr.com/public/assertions/C9T99TEPTP29fph5Y43r-Q?identity__email=ramuchiluveru64@gmail.com}{Received the Postman API fundamentals expert badge}.
+\item Solved 500+ standard DSA problems on \href{https://leetcode.com/u/Ramu_chiluveru/}{Leetcode} and \href{https://www.geeksforgeeks.org/user/ramuchiluveru64/}{GFG}.
+% \item \href{https://www.hackerrank.com/certificates/52e8118c5758}{SQL} certificate from Hackerrank.
+\item Achieved 5 stars in \href{https://www.hackerrank.com/profile/ramuchiluveru64}{Hackerrank }Python Programming.
+\end{itemize}
+
+\cvsection{TECHNICAL SKILLS}
+\textbf{Programming Languages:} 
+% \vspace{0.2cm}
+\begin{itemize}
+\item C++ 
+\item JAVA 
+\end{itemize}
+\textbf {Web Development:}
+% \vspace{0.2cm}
+\begin{itemize}
+\item React
+\item Javascript
+\item Node.js
+\item MongoDB
+\item MYSQL
+\end{itemize}
+
+\textbf {RESTFULL API}
+
+% \begin{itemize}
+%     \item MongoDB
+%     \item Express.js
+%     \item React.js
+%     \item Node.js
+% \end{itemize}
+\textbf{Tools:} \\
+\begin{itemize}
+    \item Version Control Systems (Git/Github)
+    \item Visual Studio Code
+\end{itemize}
+
+\textbf{Operating System:} \\
+\begin{itemize}
+    \item Linux
+    \item Windows
+\end{itemize}
+
+\cvsection{position of responsibility}
+\cvevent{Code Club member}{\href{https://www.linkedin.com/in/ramu-chiluveru/details/experience/}{Contest Organising Team}}{April 2024 - Present}{RGUKT BASAR}
+% \begin{itemize}
+% \item\ The interesting part of my Engineering life is to be a part
+% of this code club - RGUKTB where we solve problems
+% colloboratively and we conduct contest’s and prepare
+% questions for the contest by thinking and fixing all the
+% edge cases of a problem.
+% \end{itemize}
+
+
+
+
+% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
+
+% \begin{itemize}
+% \item Joined the company as employe \#20 and female employee \#1
+% \item Developed targeted advertisement in order to use user's search queries and show them related ads
+% \end{itemize}
+
+%\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/10em/accent!30/Sleeping \& dreaming about work,
+%   25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
+%   5/13em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
+%   20/15em/accent!40/Spending time with family,
+%   5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
+%   30/9em/accent/Showing Yahoo!\ employees that their work has meaning,
+%   5/8em/accent!20/Baking cupcakes
+% }
+
+\clearpage
+
+% \cvsection[page2sidebar]{Publications}
+
+\nocite{*}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faFileTextO}{Journal Articles}}, type=article]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faGroup}{Conference Proceedings}},type=inproceedings]
+
+% %% If the NEXT page doesn't start with a \cvsection but you'd
+% %% still like to add a sidebar, then use this command on THIS
+% %% page to add it. The optional argument lets you pull up the
+% %% sidebar a bit so that it looks aligned with the top of the
+% %% main column.
+% % \addnextpagesidebar[-1ex]{page3sidebar}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+\geometry{left=2cm,right=10cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage{emoji}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage{xcolor}
+\ifxetexorluatex
+  \setmainfont{Carlito}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+  \usepackage{emoji}
+  
+\fi
+\definecolor{VividPurple}{HTML}{000000}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{2E2E2E}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurplea}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{SRAVAN KUMAR PANCHAKOTI}
+\tagline{Rajiv Gandhi University Of Knowledge Technologies,Basar.}
+\smallskip
+\smallskip
+%\tagline{Jaypee University of Engineering and Technology}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%\photo{3.3cm}{profile.jpg}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  Contact: +91 9948691780
+  \hspace{1cm}
+  \email{\href{mailto:panchakotisravankumar000@gmail.com}{panchakotisravankumar000@gmail.com}}
+%  \email{jd7june1999@gmail.com}
+%   \phone{000-00-0000}
+%  \mailaddress{Address, Street, 00000 County}
+  \location{Siddiepet, Telangana - India}
+%  \homepage{marissamayr.tumblr.com/}
+%  \twitter{@marissamayer}
+  \linkedin{\href{https://www.linkedin.com/in/sravan-kumar-panchakoti-7427b625a/}{LinkedIn}}
+  \smallskip
+  \github{\href{https://github.com/Sravan1780}{Github}}
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{Experience}
+
+\smallskip
+
+\cvevent{Full Stack Development Intern Trainee}{\href{https://github.com/Sravan1780/CODSOFT}{Codsoft}}{Aug 2023 -- Sep 2023}{Remote}
+\begin{itemize}
+\item Worked on the Design and Development part of a fully   \textbf{Responsive Webpage} for the websites
+
+\item Tech Stack : \textbf{HTML | CSS | JavaScript}
+\end{itemize}
+
+\smallskip
+\smallskip
+
+\cvevent{}
+{\href{https://github.com/Sravan1780/Fastwin}{Gamimg Platform}}{2024 - current}{Remote}
+\begin{itemize}
+\item Working on a betting gaming applications
+\textbf{Responsive design}
+\item Enables users to earn money by participating in betting games.
+
+\item Tech Stack : \textbf{HTML | CSS | JS | ReactJS}
+\end{itemize}
+
+\cvsection{Achievements}
+\begin{itemize}
+% \item \href{https://www.hackerrank.com/certificates/9cbc1dd52213}{Problem Solving} certificate from Hackerrank.
+\item Achieved LeetCode badges by solving algorithmic challenges, showcasing strong problem-solving and coding skills.
+\smallskip
+\item Solved 300+ standard DSA problems on \href{https://leetcode.com/u/panchakotisravankumar/}{Leetcode} and \href{https://www.geeksforgeeks.org/user/panchakotisrao0cw/}{GFG}.
+\smallskip
+% \item \href{https://www.hackerrank.com/certificates/52e8118c5758}{SQL} certificate from Hackerrank.
+\item Achieved 5 stars in Hackerrank Python Programming.
+\smallskip
+\item Built and maintained a portfolio website showcasing projects and technical blogs.
+\smallskip
+
+\end{itemize}
+\cvsection{TECHNICAL SKILLS}
+\textbf{Programming Languages:} 
+% \vspace{0.2cm}
+\begin{itemize}
+\item Java 
+\item C++ 
+\item JavaScript
+\end{itemize}
+\textbf {Web Development:}
+% \vspace{0.2cm}
+\begin{itemize}
+\item ReactJS
+\item Node.js
+\item MongoDB
+\item MySQL
+\end{itemize}
+
+% \begin{itemize}
+%     \item MongoDB
+%     \item Express.js
+%     \item React.js
+%     \item Node.js
+% \end{itemize}
+\textbf{Tools:} \\
+\begin{itemize}
+    \item Version Control Systems (Git/Github)
+    \item Visual Studio Code
+\end{itemize}
+
+\textbf{Operating System:} \\
+\begin{itemize}
+    \item Windows
+    \item Linux
+\end{itemize}
+
+\cvsection{position of responsibility}
+\cvevent{Code Club member}{\href{https://www.linkedin.com/in/ramu-chiluveru/details/experience/}{Contest Organising Team}}{April 2024 - Present}{RGUKT BASAR}
+% \begin{itemize}
+% \item\ The interesting part of my Engineering life is to be a part
+% of this code club - RGUKTB where we solve problems
+% colloboratively and we conduct contest’s and prepare
+% questions for the contest by thinking and fixing all the
+% edge cases of a problem.
+% \end{itemize}
+
+
+
+
+% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
+
+% \begin{itemize}
+% \item Joined the company as employe \#20 and female employee \#1
+% \item Developed targeted advertisement in order to use user's search queries and show them related ads
+% \end{itemize}
+
+%\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/10em/accent!30/Sleeping \& dreaming about work,
+%   25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
+%   5/13em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
+%   20/15em/accent!40/Spending time with family,
+%   5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
+%   30/9em/accent/Showing Yahoo!\ employees that their work has meaning,
+%   5/8em/accent!20/Baking cupcakes
+% }
+
+\clearpage
+
+% \cvsection[page2sidebar]{Publications}
+
+\nocite{*}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faFileTextO}{Journal Articles}}, type=article]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faGroup}{Conference Proceedings}},type=inproceedings]
+
+% %% If the NEXT page doesn't start with a \cvsection but you'd
+% %% still like to add a sidebar, then use this command on THIS
+% %% page to add it. The optional argument lets you pull up the
+% %% sidebar a bit so that it looks aligned with the top of the
+% %% main column.
+% % \addnextpagesidebar[-1ex]{page3sidebar}
+
+
+\end{document}

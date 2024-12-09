@@ -1,0 +1,50 @@
+/* Card styling */
+.card-deck .card {
+  margin-top:80px;
+  margin-bottom:80px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Initial subtle shadow */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure content stays inside rounded corners */
+  background-color: rgb(242, 239, 239);
+}
+
+/* Hover effect */
+.card-deck .card:hover {
+  transform: translateY(-10px); /* Move card slightly upwards */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Card title */
+.title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 28px;
+  color: #007bff; /* Match primary border color */
+}
+
+/* Card text */
+.card-text {
+  text-align: center;
+  font-size: 16px;
+  color: #555; /* Subtle text color */
+}
+
+/* Explore button styling */
+.btn-explore {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  align-items: center;
+  margin-left: 25% !important;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn-explore:hover {
+  background-color: #28a745; /* Slightly darker green on hover */
+  color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
