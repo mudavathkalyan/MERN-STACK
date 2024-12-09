@@ -3,35 +3,46 @@
   <img src="Logo1.jpeg" width="500" >
 </p>
 
-## 🌱Agricultural Web Application for University Project Built with Reactjs + Expressjs + Nodejs + MongoDB (MERN)💻
+# MINI PROJECT using MERN 
+## 🌱Agricultural Web Application Project Built with Reactjs + Expressjs + Nodejs
+
+
+# The purpose of Agri Vision Project is to provide connections between different roles in the agriculture industry. As the farmers are not getting a fair price for their goods because of contractors. This app removes the requirement of contractors for farmers. Farmers can buy their required needs for farming from Sellers and they can also sell their products to the Consumers
+
 
 ## Features
 
-- ChatBot
-- Seller Profile
-- Add/Delete Products
-- Edit Profile
-- Add/Edit Personal & Company Address
+# Admin
+- Manages overall web application  
 
-- Farmer Profile
+# Farmer Profile
 - Add/Delete Grains
 - Edit Profile
 - Add/Edit Address
-- Buy Seeds/Pesticides or Rent Machines
-- Buy Loan & Credit Card
+- Buy Seeds/Pesticides or Rent Machines from suppliers
+- cart management
 
-- Consumer
+# Consumer
 - Edit Profile
 - Add/Edit Address
 - Buy Materials From Farmer
 - Payapal Gateway
-- Cart Page
+- Cart management
 - Change Quantity
-- Remove Product from Cart Page
-and much more
+
+# seller
+- Edit Profile
+- Add/Edit Address
+- Supply materials
+
+# weather
+-enter places manually or by single click on map
+-get the weather information throught map apis i.e street map api
+
+# chat bot
+- can use a chatbot to solve his problems and related queries.
 
 ## Usage
-
 ### ES Modules in Node
 
 Used ECMAScript Modules in the backend in this project. Be sure to have at least Node v14.6+ or you will need to add the "--experimental-modules" flag.
@@ -99,8 +110,6 @@ npm run data:destroy
 
 The MIT License
 
-Copyright (c) 2020 Sanjula De Alwis
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -154,36 +163,5 @@ This Application addresses the key challenges of agricultural commerce by creati
 
 
 
-- ChatBot
-"Seller Profile"
-- Add/Delete Products
-- Edit Profile
-- Add/Edit Personal & Company Address
-
- "Farmer Profile"
-- Add/Delete Grains
-- Edit Profile
-- Add/Edit Address
-- Buy Seeds/Pesticides or Rent Machines
-- farmer can check weather on clicking on map
-
- "Consumer"
-- Edit Profile
-- Add/Edit Address
-- Buy Materials From Farmer
-- Cart Page
-- Change Quantity
-- Remove Product from Cart Page
-
-"supplier"
--supply products
-- edit profile
 
 
-"weather"
--enter places
--get the weather information throught map apis
-
-
-
-The purpose of Agri Vision Project is to provide connections between different roles in the agriculture industry. As the farmers are not getting a fair price for their goods because of contractors. This app removes the requirement of contractors for farmers. Farmers can buy their required needs for farming from Sellers and they can also sell their products to the Consumers

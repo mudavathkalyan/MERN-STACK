@@ -1,0 +1,469 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[a4paper,margin=1in,left=1.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{float}
+% Certificate Page
+
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{titling}
+
+
+\setstretch{1.5}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1in}
+        \Huge \textbf{Agri-VisioN: Agriculture Based Web Application}\\[1.5cm]
+        \Large \textbf{A Project Report}\\[0.5cm]
+        \textit{Submitted by}\\[0.5cm]
+        \textbf{Depavath Naresh [B200391]}\\
+        \textbf{Mudavath Kalyan [B201174]}\\
+        \textbf{Mudapally Aravind [B200778]}\\[1.5cm]
+        Under the Guidance of\\[0.5cm]
+        \textbf{U Nagamani}\\[0.5cm]
+        \textbf{Department of Computer Science and Engineering}\\[0.5cm]
+        Rajiv Gandhi University of Knowledge Technologies, Basar\\
+        Telangana – 504107\\[1.5cm]
+    \end{center}
+\end{titlepage}
+\setstretch{1.5}
+
+\begin{document}
+
+% Certificate Layout
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{logo1.jpeg}\\
+    \vspace{0.4cm}
+    \textbf{\LARGE CERTIFICATE}\\[1cm]
+\end{center}
+
+\vspace{0.5cm}
+
+This is to certify that \textbf{Depavath Naresh (ID No. B200391)}, \textbf{Mudavath Kalyan (ID No. B201174)}, and \textbf{Mudapally Aravind (ID No. B200778)} have successfully completed the project titled \textbf{“Agri Vision: Agriculture Based Web Application”} at \textbf{RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES} under my supervision and guidance in the fulfillment of requirements for the \textbf{V semester, Bachelor of Technology} of RGUKT, Basar.
+
+\vspace{1.5cm}
+
+\noindent
+\textbf{Signature of the Guide}\hfill \textbf{Head of the Department}\\
+\vspace{2cm}
+
+\noindent
+\textbf{Signature of Examiners:}\\
+1) \underline{\hspace{10cm}}\\[0.5cm]
+2) \underline{\hspace{10cm}}\\
+
+% Declaration Page
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+We hereby declare that the project report entitled \textbf{“Agri Vision: Agriculture Based Web Application”} is an authentic record of our own work carried out under the supervision of \textbf{MRS.NAGAMANI}, Assistant Professor, Department of Computer Science and Engineering, RGUKT, Basar.
+
+\vspace{2cm}
+\noindent Place: Basar\\
+Date: December 2024\\[1cm]
+\textbf{Depavath Naresh (B200391)}\\
+\textbf{Mudavath Kalyan (B201174)}\\
+\textbf{Mudapally Aravind (B200778)}
+
+
+% Acknowledgment Page
+\begin{center}
+    \setlength{\fboxrule}{1pt}
+    \setlength{\fboxsep}{10pt}
+    \doublebox{%
+        \begin{minipage}{0.9\textwidth}
+            \begin{center}
+                \Large \textbf{ACKNOWLEDGEMENT}\\[0.5cm]
+            \end{center}
+            \noindent
+            I express my gratitude to my guide \textbf{Ms.Nagamani Uddamari}, Department of Computer Science and Engineering, for her encouragement, valuable suggestions, and guidance during the design, development, and implementation of this project.
+
+            \vspace{0.3cm}
+            I also express my gratitude to \textbf{Dr. Venkat Ramana}, Head of the Department, Department of Computer Science and Engineering, for his valuable guidance and encouragement during the course of this project and helping us complete it successfully.
+
+            \vspace{0.3cm}
+            I express my grateful thanks to all the staff members of the \textbf{Department of Computer Application} for their valuable assistance, encouragement, and cooperation during this wonderful learning experience.
+
+            \vspace{0.3cm}
+            Finally, I am also grateful to my parents and friends for their support, encouragement, and backing to achieve the goal of completing this project successfully.
+        \end{minipage}
+    }
+\end{center}
+% Abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\textbf{Agri Vision} is an innovative web-based application designed to transform the agricultural landscape by bridging the gap between farmers, consumers, and sellers on a single platform. The primary objective of this platform is to eliminate the traditional intermediaries that often exploit both farmers and consumers, leading to unfair pricing and inefficiencies in the supply chain. By creating a direct connection between the stakeholders, the platform ensures fair pricing mechanisms, better market access, and seamless communication.
+
+\noindent The application caters to the specific needs of its users through role-specific profiles, ensuring personalized experiences for farmers, consumers, and sellers. Farmers can showcase their produce, access market trends, and connect with buyers directly, while consumers benefit from fresh produce at reasonable prices. Sellers can use the platform to expand their business by connecting with a broader customer base.
+
+\noindent A key feature of the platform is its e-commerce capability, enabling users to buy and sell agricultural products with ease. The integration of real-time weather updates allows farmers to make informed decisions regarding crop planning, harvesting, and storage. Additionally, the platform is equipped with an AI-powered chatbot to provide 24/7 assistance, answering user queries, and offering recommendations to improve their overall experience.
+
+\noindent \textbf{Agri Vision} leverages cutting-edge technology to address the persistent challenges in the agricultural sector, fostering transparency, efficiency, and sustainability. By empowering farmers and ensuring fair trade practices, the platform aspires to build a thriving agricultural ecosystem that benefits all stakeholders.
+
+\noindent \textbf{Keywords:} Agriculture, Web Application, E-commerce, Farmers, Consumers, Sellers, Transparency, Sustainability, AI Assistance
+
+% Table of Contents
+\tableofcontents
+
+% Chapters
+\chapter{Introduction}
+\section{Objectives}
+The \textit{Agri Vision} project aims to solve critical challenges faced by the agricultural sector. The key objectives include:
+
+\begin{itemize}
+    \item \textbf{Empower Farmers:} 
+    \begin{itemize}
+        \item Provide farmers with a platform to list their products, reach a wider audience, and access fair pricing without relying on intermediaries.
+        \item Enable farmers to connect directly with consumers and sellers, thereby improving market access and income.
+    \end{itemize}
+    
+    \item \textbf{Streamline Transactions:}
+    \begin{itemize}
+        \item Create an efficient and secure marketplace for farmers, consumers, and sellers to buy and sell agricultural products.
+        \item Simplify the transaction process by integrating secure payment gateways and real-time order tracking.
+    \end{itemize}
+
+    \item \textbf{Weather Insights:} 
+    \begin{itemize}
+        \item Integrate real-time weather updates to help farmers plan their activities effectively, reducing risks from unforeseen weather events.
+        \item Provide location-based weather forecasts, enabling farmers to make informed decisions about planting, irrigation, and harvesting.
+    \end{itemize}
+
+    \item \textbf{Consumer Access:} 
+    \begin{itemize}
+        \item Enable consumers to directly purchase fresh, organic produce from farmers, bypassing middlemen.
+        \item Provide an easy-to-use platform for consumers to browse, compare, and buy agricultural products at fair prices.
+    \end{itemize}
+\end{itemize}
+\section{Scope}
+\textit{Agri Vision} aims to bridge the gap between farmers, sellers, and consumers by leveraging technology to eliminate inefficiencies. The platform addresses challenges such as market fragmentation, lack of information, and poor communication among stakeholders.
+
+\subsection*{Bridging the Communication Gap}
+Farmers, consumers, and sellers can interact directly using role-specific profiles:
+\begin{itemize}
+    \item \textbf{Farmers:} List products with pricing, quantity, and quality details.
+    \item \textbf{Consumers:} Purchase fresh produce directly and negotiate prices.
+    \item \textbf{Sellers:} Market products such as fertilizers and agricultural tools.
+\end{itemize}
+Real-time notifications ensure smooth communication regarding orders, availability, and weather updates.
+
+\subsection*{Reducing Market Fragmentation}
+\textit{Agri Vision} consolidates fragmented markets into a single, accessible platform:
+\begin{itemize}
+    \item Provides farmers with access to distant buyers.
+    \item Reduces dependency on intermediaries by integrating e-commerce tools.
+    \item Standardizes pricing and quality benchmarks across regions.
+\end{itemize}
+
+\subsection*{Empowering Farmers}
+Farmers gain access to tools and information that optimize operations:
+\begin{itemize}
+    \item \textbf{Market Analytics:} Insights into pricing trends and demand.
+    \item \textbf{Inventory Management:} Track stock and manage harvests efficiently.
+    \item \textbf{Weather Updates:} Forecasts aid in planning and decision-making.
+\end{itemize}
+
+\subsection*{Enhancing Consumer Access}
+Consumers can find and purchase fresh produce conveniently:
+\begin{itemize}
+    \item Search filters for quality, region, and availability.
+    \item A user-friendly interface for browsing, ordering, and tracking shipments.
+\end{itemize}
+
+\subsection*{Streamlining Operations for Sellers}
+\textit{Agri Vision} simplifies operations for sellers of equipment and fertilizers:
+\begin{itemize}
+    \item \textbf{Digital Catalogs:} Showcase products with details and pricing.
+    \item \textbf{Order Tracking:} Real-time updates on inventory and fulfillment.
+    \item \textbf{Payment Integration:} Secure gateways for seamless transactions.
+\end{itemize}
+
+\subsection*{Promoting Sustainability}
+The platform reduces inefficiencies to create a sustainable ecosystem:
+\begin{itemize}
+    \item Direct sales reduce transportation, carbon emissions, and food spoilage.
+    \item Encourages organic farming by supporting modern techniques and practices.
+\end{itemize}
+
+
+\chapter{System Architecture}
+\section{Overview}
+The \textit{Agri Vision} system comprises three main layers:
+\begin{itemize}
+    \item \textbf{Frontend:} Built with React.js for an interactive user experience.
+    \item \textbf{Backend:} Node.js with Express.js handles business logic, APIs, and authentication.
+    \item \textbf{Database:} MongoDB stores user profiles, products, orders, and weather data.
+\end{itemize}
+
+\section{Components}
+\begin{enumerate}
+    \item \textbf{User Management:} Role-specific features for farmers, sellers, and consumers.
+    \item \textbf{Interactive Maps:} Real-time weather and location-based data using OpenStreetMap and OpenWeather APIs.
+    \item \textbf{E-commerce Module:} Secure and seamless payment gateways with PayPal integration.
+    \item \textbf{Chatbot:} AI-powered chatbot for user assistance and query resolution.
+\end{enumerate}
+
+\chapter{Database Design}
+\section{Entity-Relationship Diagram (ERD)}
+The database schema for \textit{Agri Vision} is designed to ensure optimal performance and scalability. It includes the following entities:
+
+\begin{itemize}
+    \item \textbf{Users:} This table stores the details of all users on the platform, including:
+    \begin{itemize}
+        \item \textbf{userID:} A unique identifier for each user.
+        \item \textbf{name:} Full name of the user.
+        \item \textbf{address:} Address details for delivery and location-based services.
+        \item \textbf{role:} Specifies the role of the user (e.g., Farmer, Consumer, Seller).
+        \item \textbf{contact:} Contact information such as phone number and email.
+    \end{itemize}
+    \item \textbf{Products:} This table holds the inventory details for farmers and sellers:
+    \begin{itemize}
+        \item \textbf{productID:} Unique ID assigned to each product.
+        \item \textbf{category:} Type of product (e.g., Vegetables, Fertilizers, Tools).
+        \item \textbf{price:} The selling price of the product.
+        \item \textbf{availability:} Stock information (e.g., quantity available).
+        \item \textbf{sellerID:} Links the product to the seller who listed it.
+    \end{itemize}
+    \item \textbf{Orders:} Tracks order-related information, including:
+    \begin{itemize}
+        \item \textbf{orderID:} Unique identifier for each order.
+        \item \textbf{status:} Status of the order (e.g., Pending, Completed, Canceled).
+        \item \textbf{consumerID:} Links the order to the consumer who placed it.
+        \item \textbf{paymentInfo:} Payment details, including transaction IDs and modes.
+        \item \textbf{deliveryDate:} Scheduled date for order delivery.
+    \end{itemize}
+    \item \textbf{Weather Data:} This table provides weather-related information for users:
+    \begin{itemize}
+        \item \textbf{locationID:} A unique ID representing the geographical location.
+        \item \textbf{temperature:} Current temperature readings.
+        \item \textbf{rainfall:} Rainfall predictions or historical data.
+        \item \textbf{forecast:} Short-term and long-term weather forecasts.
+    \end{itemize}
+\end{itemize}
+
+\section{Relationships}
+The relationships between entities ensure smooth data flow and integrity:
+\begin{itemize}
+    \item \textbf{Farmers and Products:} Each farmer can list multiple products, linking the \textbf{Users} table to the \textbf{Products} table via \textbf{sellerID}.
+    \item \textbf{Consumers and Orders:} A consumer can place multiple orders, linking the \textbf{Users} table to the \textbf{Orders} table via \textbf{consumerID}.
+    \item \textbf{Weather Data and Locations:} Weather data is tied to user-specific locations, enabling tailored weather information for each user.
+\end{itemize}
+
+\chapter{Class Design}
+\section{Object-Oriented Approach}
+The system design follows an object-oriented approach for modularity and reusability. Key classes include:
+
+\begin{itemize}
+    \item \textbf{User Class:}
+    \begin{itemize}
+        \item Attributes:
+        \begin{itemize}
+            \item \textbf{userID:} Unique identifier for users.
+            \item \textbf{name, role, and contact:} Core user details.
+            \item \textbf{address:} Stores user location for service delivery.
+        \end{itemize}
+        \item Methods:
+        \begin{itemize}
+            \item \textbf{registerUser():} Handles user registration.
+            \item \textbf{updateProfile():} Allows users to update their details.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Product Class:}
+    \begin{itemize}
+        \item Attributes:
+        \begin{itemize}
+            \item \textbf{productID, category, price, availability, sellerID.}
+        \end{itemize}
+        \item Methods:
+        \begin{itemize}
+            \item \textbf{addProduct():} Enables sellers to list new products.
+            \item \textbf{updateStock():} Updates stock availability after a sale.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Order Class:}
+    \begin{itemize}
+        \item Attributes:
+        \begin{itemize}
+            \item \textbf{orderID, status, consumerID, paymentInfo, deliveryDate.}
+        \end{itemize}
+        \item Methods:
+        \begin{itemize}
+            \item \textbf{createOrder():} Handles new order creation.
+            \item \textbf{trackOrder():} Provides updates on order status.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Weather Class:}
+    \begin{itemize}
+        \item Attributes:
+        \begin{itemize}
+            \item \textbf{locationID, temperature, rainfall, forecast.}
+        \end{itemize}
+        \item Methods:
+        \begin{itemize}
+            \item \textbf{getWeatherData():} Fetches current weather updates.
+            \item \textbf{generateForecast():} Provides tailored weather predictions.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\chapter{Frontend Design}
+\section{Features}
+The frontend design of \textit{Agri Vision} prioritizes user accessibility and functionality:
+\begin{itemize}
+    \item \textbf{Role-Based Dashboards:}
+    \begin{itemize}
+        \item Farmers can manage their product listings and view weather data.
+        \item Consumers have access to product search, purchase, and tracking features.
+        \item Sellers can manage inventory, track orders, and update product details.
+    \end{itemize}
+    \item \textbf{Cart and Checkout Pages:}
+    \begin{itemize}
+        \item A user-friendly shopping cart allows consumers to add, edit, or remove items.
+        \item Secure checkout integrates with payment gateways like PayPal and Razorpay.
+    \end{itemize}
+    \item \textbf{Interactive Weather Map:}
+    \begin{itemize}
+        \item Displays real-time weather data for specific locations.
+        \item Uses OpenWeather API for accurate weather forecasts.
+    \end{itemize}
+\end{itemize}
+
+\section{Technologies Used}
+The frontend of \textit{Agri Vision} uses modern technologies to create a user-friendly and efficient platform. The main technologies include:
+
+\begin{itemize}
+    \item \textbf{React.js:} 
+    \begin{itemize}
+        \item Used to build an interactive and responsive user interface.
+        \item Helps in creating reusable components, like role-based dashboards and weather maps.
+        \item Makes the platform faster by using a virtual DOM for updates.
+    \end{itemize}
+    
+    \item \textbf{Bootstrap:} 
+    \begin{itemize}
+        \item Makes the platform look neat and professional with pre-designed layouts and components.
+        \item Ensures the design works well on all devices, like desktops, tablets, and smartphones.
+    \end{itemize}
+
+    \item \textbf{API Integration:} 
+    \begin{itemize}
+        \item Connects the frontend to the backend and external services, like weather APIs.
+        \item Helps farmers get real-time weather updates.
+        \item Provides secure online payments using trusted payment gateways.
+    \end{itemize}
+\end{itemize}
+
+---
+
+\chapter{Future Scope}
+In the future, \textit{Agri Vision} can grow and improve with these features:
+
+\begin{itemize}
+    \item \textbf{Mobile App:}
+    \begin{itemize}
+        \item A mobile app will make the platform easy to use for everyone, even in rural areas.
+        \item Offline features will let farmers access important information without an internet connection.
+    \end{itemize}
+
+    \item \textbf{AI-Based Recommendations:}
+    \begin{itemize}
+        \item AI can suggest the best crops to plant, when to plant them, and how to manage pests based on weather and market data.
+        \item It can also help sellers understand what customers want.
+    \end{itemize}
+    
+    \item \textbf{Language Support:}
+    \begin{itemize}
+        \item Adding support for local languages will make the platform accessible to people from different regions.
+    \end{itemize}
+\end{itemize}
+
+These improvements will make \textit{Agri Vision} even more helpful, inclusive, and powerful for the agricultural community.
+
+\chapter{Software Testing}
+
+Software testing is the process of evaluating the software against the requirements gathered from users and system specifications. Testing is conducted at various levels of the software development lifecycle (SDLC) or at the module level in the program code. It helps ensure the software behaves as expected and meets the required functional and non-functional specifications. Testing in \textit{Agri Vision} follows a structured approach that includes both validation and verification processes.
+
+\section{Unit Testing}
+Unit testing is a technique in which individual software modules or components are tested in isolation to ensure that they function correctly. In the context of \textit{Agri Vision}, unit testing is performed by the developers themselves to detect any issues in the standalone units or components of the application before they are integrated with other components. The main goal is to ensure the functional correctness of these modules and to identify defects early in the development phase.
+
+\subsection*{Advantages of Unit Testing:}
+\begin{itemize}
+    \item \textbf{Reduces Defects:} Unit testing ensures that newly developed features function correctly and reduces bugs when changing existing functionality.
+    \item \textbf{Cost-Effective:} It helps detect defects early in the development process, reducing the overall cost of testing.
+    \item \textbf{Improved Design:} Unit testing encourages better software design by identifying potential design flaws early on.
+    \item \textbf{Better Refactoring:} Allows for safe refactoring of code by ensuring that existing functionality is not broken.
+    \item \textbf{Quality Assurance:} When integrated with the build process, unit tests provide immediate feedback on the quality of the build.
+\end{itemize}
+
+\subsection*{Unit Testing Techniques:}
+Unit testing in \textit{Agri Vision} uses the following techniques:
+\begin{itemize}
+    \item \textbf{Black Box Testing:} This technique focuses on testing the user interface, input, and output functionality without knowledge of the internal workings of the module. In \textit{Agri Vision}, black box testing is used to validate the functionality of key features like product listings, cart functionality, and order management.
+    \item \textbf{White Box Testing:} White box testing is used to test the internal functions and logic of the modules. This includes checking the correctness of algorithms used for product pricing, user authentication, and payment processing.
+\end{itemize}
+
+\section{Black Box Testing}
+Black box testing is a software testing method where the functionality of an application is tested based on its specifications, without any knowledge of the internal code or structure. In \textit{Agri Vision}, black box testing is used to ensure that the system functions according to the specified requirements. 
+
+\subsection*{Advantages of Black Box Testing:}
+\begin{itemize}
+    \item \textbf{Specification-Based Testing:} Black box testing focuses on the software's functionality from an end-user perspective, ensuring that the system meets all functional requirements and behaves as expected.
+    \item \textbf{Independent Testing:} Black box testing is typically performed by independent testers who are not involved in the development of the application, ensuring unbiased results.
+    \item \textbf{Applicable to All Levels:} Black box testing can be applied at various stages of software testing, including unit, integration, system, and acceptance testing.
+\end{itemize}
+
+\subsection*{Testing Approach for \textit{Agri Vision}:}
+In \textit{Agri Vision}, black box testing is performed across several areas:
+\begin{itemize}
+    \item \textbf{User Interface Testing:} Validates that the user interface (UI) is intuitive and functions as expected, such as browsing products, adding items to the cart, and checking out.
+    \item \textbf{Functional Testing:} Ensures that all features of the system, including product listings, weather updates, and payment gateways, perform as expected.
+    \item \textbf{End-to-End Testing:} Simulates real-world user scenarios, such as a consumer purchasing products directly from farmers and processing payments.
+\end{itemize}
+
+\section{Testing Sequence for \textit{Agri Vision}}
+The testing sequence for \textit{Agri Vision} follows a structured approach to ensure comprehensive validation of the software's functionality:
+
+\begin{itemize}
+    \item \textbf{Unit Testing:} Each module (e.g., user registration, product listing, payment processing) is tested individually to ensure correctness before integration.
+    \item \textbf{Integration Testing:} After individual module testing, integration testing is conducted to ensure that different modules interact correctly, such as the communication between the user profile and the shopping cart system.
+    \item \textbf{System Testing:} The entire system is tested as a whole to ensure that all modules work together seamlessly and the system functions as expected. This includes testing of end-to-end workflows like product purchasing, order tracking, and weather updates.
+    \item \textbf{User Acceptance Testing (UAT):} The system is tested by real users (farmers, consumers, and sellers) to ensure that it meets their needs and expectations before going live.
+\end{itemize}
+
+\section{Conclusion of TESTING}
+Software testing plays a crucial role in ensuring the success of the \textit{Agri Vision} platform. By performing unit testing, black box testing, and integration testing at different stages of the software development life cycle, the platform is ensured to function as intended. These testing strategies help identify and resolve issues early in development, leading to a more stable and reliable product for end users. The detailed and systematic approach to testing ensures that the \textit{Agri Vision} platform delivers a seamless, user-friendly experience for farmers, consumers, and sellers.
+\chapter{Final conclusion and Overview}
+\section{Conclusion}
+\textit{Agri Vision} solves many problems in agriculture by bringing farmers, consumers, and sellers together on one platform. The main benefits are:
+
+\begin{itemize}
+    \item \textbf{For Farmers:}
+    \begin{itemize}
+        \item Farmers can sell their products directly to buyers, avoiding middlemen.
+        \item Real-time weather updates help farmers plan better and avoid losses.
+    \end{itemize}
+    
+    \item \textbf{For Consumers:}
+    \begin{itemize}
+        \item Consumers get fresh produce directly from farms at fair prices.
+        \item They can see transparent pricing and avoid overpaying.
+    \end{itemize}
+
+    \item \textbf{For Sellers:}
+    \begin{itemize}
+        \item Sellers can manage their stock, process orders, and receive payments easily.
+        \item The platform helps them reach more customers and grow their business.
+    \end{itemize}
+\end{itemize}
+
+In summary, \textit{Agri Vision} is a smart, user-friendly system that makes agricultural trade fair, transparent, and efficient for everyone.
+
+---
+\end{document}
