@@ -1,5 +1,7 @@
 import express from "express"
+
 import { checkAuth, login, logout, signup, updateProfile } from "../controllers/auth.controller.js";
+
 import { protectRoute } from "../middleware/auth.middleware.js";
 //remember .js extension becoz we using "type"="module"
 

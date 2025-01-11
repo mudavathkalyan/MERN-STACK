@@ -12,13 +12,14 @@ export const signup=async (req,res)=>{
         }
         if(password.length <6)
         {
-            return res.status(400).json({message:"Password must be of atleast characters"});
+            return res.status(400).json({message:"Password must be atleast 6 characters"});
         }
         const user=await User.findOne({email});
         
         if(user) return res.status(400).json({message:"User already exists"});
         //if user not found
-        //hash passwors and do signup
+
+        //hash password and do signup
         const salt=await bcrypt.genSalt(10)
         const hashedPassword=await bcrypt.hash(password,salt);
 
@@ -41,7 +42,7 @@ export const signup=async (req,res)=>{
             })
         }
         else{
-            res.status(400).json({message:"Invalid user,Retry."});
+            res.status(400).json({message:"Invalid user , Retry."});
         }
         console.log(newUser);
    }catch(error){
@@ -55,11 +56,11 @@ export const login=async (req,res)=>{
     try{
         const user=await User.findOne({email});
         if(!user)
-            return res.status(400).json({message:"Invalid credentials"});
+            return res.status(400).json({message:"Invalid credentials..."});
         
         const isPassword=await bcrypt.compare(password,user.password);
         if(!isPassword)
-                return res.status(400).json({message:"Invalid credentials"})
+                return res.status(400).json({message:"Invalid credentials..."})
 
         generateToken(user._id,res);
         res.status(200).json({
@@ -96,7 +97,8 @@ export const updateProfile=async(req,res)=>{
         {
             return res.status(400).json({message:"profile pic is required"});
         }
-        const uploadResponse=await cloudinary.uploader.upload(profilePic);
+        const uploadResponse=await cloudinary.uploader.upload(profilePic);// update profile picture in cloudinary
+
         const updatedUser=await User.findByIdAndUpdate(userId,{profilePic:uploadResponse.secure_url},{new:true});
         res.status(200).json(updatedUser);
     }catch(error){

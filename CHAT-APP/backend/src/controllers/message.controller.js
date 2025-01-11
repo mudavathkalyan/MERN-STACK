@@ -1,7 +1,7 @@
 import Message from "../models/message.model.js";
 import User from "../models/user.model.js";
 
-//show all user except loged one
+//show all user except logged one
 export const getUsersForSidebar=async(req,res)=>{
 
     try{
