@@ -32,7 +32,11 @@ This is a sample project using the MERN (MongoDB, Express.js, React.js, Node.js)
 # flow
 1. signup
 2. login
-3. logout
-4. update profile i.e (image)
+3. update profile i.e (image)
     here using cloudinary i.e cloud name (api key)
+4. send messages
+5. view messages
+6. logout
 
+
+# (using) daisy ui for skelton 
