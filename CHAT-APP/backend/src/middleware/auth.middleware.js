@@ -10,7 +10,7 @@ export const protectRoute=async(req,res,next)=>{
         }
         const decoded=jwt.verify(token,process.env.JWT_SECRET);
         if(!decoded)
-        {
+        {cloudinary
             return res.status(401).json({message:"unothorized-token not Match"});
         }
         const user=await User.findById(decoded.userId).select("-password");
