@@ -1,44 +1,45 @@
-// const express =require("express");
-
-import express from "express"
-import dotenv from "dotenv"
-
-import cors from  "cors"
-
-import authRoutes from "./routes/auth.route.js" //.js because we are using type="module"
-
-import messageRoutes from "./routes/message.route.js"
-import { connectDB } from "./lib/db.js"
+import express from "express";
+import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
+import path from "path";
 
-dotenv.config()// with config we can access env variables from env file
-const PORT=process.env.PORT
+import { connectDB } from "./lib/db.js";
+import authRoutes from "./routes/auth.route.js";
+import messageRoutes from "./routes/message.route.js";
+import { app, server } from "./lib/socket.js";
 
-const app=express();
-app.use(express.json());//allows to extract json data of body
+// Load environment variables
+dotenv.config();
 
-app.use(cookieParser());//allow to parse cookie
+const PORT = process.env.PORT || 5000; // Default to 5000 if PORT is undefined
+const __dirname = path.resolve();
 
-// app.use(cors(
-//     {
-//         origin:"http://localhost:5173",
-//         credentials:true,
-//     }
-// ));
+// Middleware setup
+app.use(express.json());
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Frontend URL
+    credentials: true,
+  })
+);
 
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
-// const cors = require('cors');
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+// Serve static files in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  });
+}
 
-
-app.use("/api/auth",authRoutes);//routes signin and login
-
-app.use("/api/message",messageRoutes);
- 
-
-
-app.listen(PORT,()=>{
-    console.log("Runing at port:"+PORT);
-    connectDB();
-})
+// Start server
+server.listen(PORT, () => {
+  console.log(`Server is running on PORT: ${PORT}`);
+  connectDB();
+});
