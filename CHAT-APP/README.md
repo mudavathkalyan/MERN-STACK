@@ -44,5 +44,6 @@ This is a sample project using the MERN (MongoDB, Express.js, React.js, Node.js)
 
 1. toast -> alert messages.
 2. cloudinary -> image uploading
+3. lucide-react -> for icons 
 
   (using) daisy ui for skelton 
