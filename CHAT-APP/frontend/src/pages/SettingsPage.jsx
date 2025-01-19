@@ -1,50 +1,34 @@
-import React from "react";
 import { THEMES } from "../constants";
-import useThemeStore from "../store/UseThemeStore";
+import { useThemeStore } from "../store/UseThemeStore";
 import { Send } from "lucide-react";
-import clsx from "clsx";
 
-// Mock messages for preview
 const PREVIEW_MESSAGES = [
-  { id: 1, content: "Hey! How's it going?", isSent: false, time: "12:00 PM" },
-  {
-    id: 2,
-    content: "I'm doing great! Just working on some new features.",
-    isSent: true,
-    time: "12:01 PM",
-  },
+  { id: 1, content: "Hey! How's it going?", isSent: false },
+  { id: 2, content: "I'm doing great! Just working on some new features.", isSent: true },
 ];
 
 const SettingsPage = () => {
-  const theme = useThemeStore((state) => state.theme);
-  const setTheme = useThemeStore((state) => state.setTheme);
+  const { theme, setTheme } = useThemeStore();
 
   return (
     <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">
       <div className="space-y-6">
-        {/* Theme Selection */}
         <div className="flex flex-col gap-1">
           <h2 className="text-lg font-semibold">Theme</h2>
-          <p className="text-sm text-base-content/70">
-            Choose a theme for your chat interface
-          </p>
+          <p className="text-sm text-base-content/70">Choose a theme for your chat interface</p>
         </div>
 
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
           {THEMES.map((t) => (
             <button
               key={t}
-              className={clsx(
-                "group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors",
-                theme === t ? "bg-base-200" : "hover:bg-base-200/50"
-              )}
+              className={`
+                group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors
+                ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}
+              `}
               onClick={() => setTheme(t)}
-              aria-label={`Set theme to ${t}`}
             >
-              <div
-                className="relative h-8 w-full rounded-md overflow-hidden"
-                data-theme={t}
-              >
+              <div className="relative h-8 w-full rounded-md overflow-hidden" data-theme={t}>
                 <div className="absolute inset-0 grid grid-cols-4 gap-px p-1">
                   <div className="rounded bg-primary"></div>
                   <div className="rounded bg-secondary"></div>
@@ -73,7 +57,7 @@ const SettingsPage = () => {
                       J
                     </div>
                     <div>
-                      <h3 className="font-medium text-sm">John</h3>
+                      <h3 className="font-medium text-sm">John Doe</h3>
                       <p className="text-xs text-base-content/70">Online</p>
                     </div>
                   </div>
@@ -84,32 +68,22 @@ const SettingsPage = () => {
                   {PREVIEW_MESSAGES.map((message) => (
                     <div
                       key={message.id}
-                      className={clsx(
-                        "flex",
-                        message.isSent ? "justify-end" : "justify-start"
-                      )}
-                      aria-label={
-                        message.isSent ? "Sent message" : "Received message"
-                      }
+                      className={`flex ${message.isSent ? "justify-end" : "justify-start"}`}
                     >
                       <div
-                        className={clsx(
-                          "max-w-[80%] rounded-xl p-3 shadow-sm",
-                          message.isSent
-                            ? "bg-primary text-primary-content"
-                            : "bg-base-200"
-                        )}
+                        className={`
+                          max-w-[80%] rounded-xl p-3 shadow-sm
+                          ${message.isSent ? "bg-primary text-primary-content" : "bg-base-200"}
+                        `}
                       >
                         <p className="text-sm">{message.content}</p>
                         <p
-                          className={clsx(
-                            "text-[10px] mt-1.5",
-                            message.isSent
-                              ? "text-primary-content/70"
-                              : "text-base-content/70"
-                          )}
+                          className={`
+                            text-[10px] mt-1.5
+                            ${message.isSent ? "text-primary-content/70" : "text-base-content/70"}
+                          `}
                         >
-                          {message.time}
+                          12:00 PM
                         </p>
                       </div>
                     </div>
@@ -125,12 +99,8 @@ const SettingsPage = () => {
                       placeholder="Type a message..."
                       value="This is a preview"
                       readOnly
-                      aria-label="Message preview input"
                     />
-                    <button
-                      className="btn btn-primary h-10 min-h-0"
-                      aria-label="Send message"
-                    >
+                    <button className="btn btn-primary h-10 min-h-0">
                       <Send size={18} />
                     </button>
                   </div>
@@ -143,5 +113,4 @@ const SettingsPage = () => {
     </div>
   );
 };
-
 export default SettingsPage;

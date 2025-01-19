@@ -1,3 +1,4 @@
+// UseChatStore.js
 import { create } from "zustand";
 import toast from "react-hot-toast";
 import { axiosInstance } from "../lib/axios";
@@ -23,6 +24,7 @@ export const useChatStore = create((set, get) => ({
   },
 
   getMessages: async (userId) => {
+    if (!userId) return;
     set({ isMessagesLoading: true });
     try {
       const res = await axiosInstance.get(`/messages/${userId}`);
@@ -36,6 +38,11 @@ export const useChatStore = create((set, get) => ({
 
   sendMessage: async (messageData) => {
     const { selectedUser, messages } = get();
+    if (!selectedUser) {
+      toast.error("No user selected.");
+      return;
+    }
+
     try {
       const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
       set({ messages: [...messages, res.data] });
@@ -53,25 +60,23 @@ export const useChatStore = create((set, get) => ({
       return;
     }
 
-    if (!selectedUser) return;
+    if (!selectedUser) {
+      console.warn("No user selected for subscription.");
+      return;
+    }
 
     socket.on("newMessage", (newMessage) => {
-      const isMessageFromSelectedUser = newMessage.senderId === selectedUser._id;
-      if (!isMessageFromSelectedUser) return;
-
-      set({
-        messages: [...get().messages, newMessage],
-      });
+      if (newMessage.senderId === selectedUser._id) {
+        set({
+          messages: [...get().messages, newMessage],
+        });
+      }
     });
   },
 
   unsubscribeFromMessages: () => {
     const socket = useAuthStore.getState().socket;
-    if (!socket) {
-      console.warn("Socket is not initialized.");
-      return;
-    }
-    socket.off("newMessage");
+    if (socket) socket.off("newMessage");
   },
 
   setSelectedUser: (selectedUser) => set({ selectedUser }),

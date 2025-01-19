@@ -3,7 +3,6 @@ import { useChatStore } from "../store/UseChatStore";
 import { Image, Send, X } from "lucide-react";
 import toast from "react-hot-toast";
 
-
 const MessageInput = () => {
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
@@ -43,7 +42,6 @@ const MessageInput = () => {
       setText("");
       setImagePreview(null);
       if (fileInputRef.current) fileInputRef.current.value = "";
-
     } catch (error) {
       console.error("Failed to send message:", error);
     }

@@ -3,6 +3,7 @@ import { axiosInstance } from "../lib/axios.js";
 import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
+// Base URL for the socket server
 const BASE_URL =
   import.meta.env.MODE === "development" ? "http://localhost:5001" : "/";
 
@@ -15,19 +16,23 @@ export const useAuthStore = create((set, get) => ({
   onlineUsers: [],
   socket: null,
 
-
+  // Check authentication status
   checkAuth: async () => {
     try {
       const res = await axiosInstance.get("/auth/check");
       set({ authUser: res.data });
     } catch (error) {
-      console.error("Error in checkAuth:", error?.response?.data?.message || error.message || "Unknown error");
+      console.error(
+        "Error in checkAuth:",
+        error?.response?.data?.message || error.message || "Unknown error"
+      );
       set({ authUser: null });
     } finally {
       set({ isCheckingAuth: false });
     }
   },
 
+  // Signup function
   signup: async (data) => {
     set({ isSigningUp: true });
     try {
@@ -44,6 +49,7 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
+  // Login function
   login: async (data) => {
     set({ isLoggingIn: true });
     try {
@@ -60,19 +66,7 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
-  // logout: async () => {
-  //   try {
-  //     await axiosInstance.post("/auth/logout");
-  //     set({ authUser: null });
-  //     toast.success("Logged out successfully");
-  //   } catch (error) {
-  //     const errorMessage =
-  //       error?.response?.data?.message || error?.message || "Something went wrong";
-  //     toast.error(errorMessage);
-  //     console.error("Logout error:", errorMessage);
-  //   }
-  // },
-
+  // Update profile
   updateProfile: async (data) => {
     set({ isUpdatingProfile: true });
     try {
@@ -89,9 +83,9 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
-
+  // Initialize socket connection
   initializeSocket: () => {
-    const socketInstance = io("http://localhost:5001"); // Replace with your socket server URL
+    const socketInstance = io(BASE_URL); // Connect to socket server
     set({ socket: socketInstance });
 
     socketInstance.on("connect", () => {
@@ -101,8 +95,14 @@ export const useAuthStore = create((set, get) => ({
     socketInstance.on("disconnect", () => {
       console.log("Socket disconnected.");
     });
+
+    socketInstance.on("connect_error", (error) => {
+      console.error("Socket connection error:", error.message);
+      toast.error("Failed to connect to the server.");
+    });
   },
 
+  // Logout user and disconnect socket
   logout: async () => {
     try {
       const socket = get().socket;
@@ -112,7 +112,10 @@ export const useAuthStore = create((set, get) => ({
       set({ authUser: null, socket: null }); // Clear authUser and socket state
       toast.success("Logged out successfully");
     } catch (error) {
-      toast.error(error.response?.data?.message || "Something went wrong.");
+      const errorMessage =
+        error?.response?.data?.message || error?.message || "Something went wrong";
+      toast.error(errorMessage);
+      console.error("Logout error:", errorMessage);
     }
   },
 }));

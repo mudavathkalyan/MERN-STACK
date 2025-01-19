@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
-import { cloudinary } from "../lib/cloudinary.js";
+import cloudinary from "../lib/cloudinary.js";
 
 const app = express();
 
